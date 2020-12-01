@@ -5,14 +5,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/photoImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+
             android:adjustViewBounds="true" />
 
         <TextView
@@ -20,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:paddingTop="16dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             tools:text="Name" />
 
@@ -29,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             tools:text="Message" />
 
