@@ -17,11 +17,14 @@ class MessageAdapter(context: Context?, resource: Int, objects: List<FriendlyMes
             convertView =
                 (context as Activity).layoutInflater.inflate(R.layout.item_message, parent, false)
         }
+        val authorTextView = convertView?.findViewById<View>(R.id.nameTextView) as TextView
+
         val photoImageView = convertView!!.findViewById<View>(R.id.photoImageView) as ImageView
         val messageTextView = convertView.findViewById<View>(R.id.messageTextView) as TextView
-        val authorTextView = convertView.findViewById<View>(R.id.nameTextView) as TextView
         val message = getItem(position)
         val isPhoto = message!!.photoUrl != null
+        authorTextView.text = message.name
+
         if (isPhoto) {
             messageTextView.visibility = View.GONE
             photoImageView.visibility = View.VISIBLE
@@ -33,7 +36,6 @@ class MessageAdapter(context: Context?, resource: Int, objects: List<FriendlyMes
             photoImageView.visibility = View.GONE
             messageTextView.text = message.text
         }
-        authorTextView.text = message.name
         return convertView
     }
 }
